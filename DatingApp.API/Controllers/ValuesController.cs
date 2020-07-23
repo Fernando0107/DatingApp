@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using DatingApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 
+
+// API Controllers
+// Contain End Points (Routes)
 namespace DatingApp.API.Controllers
 {
     // api/values -> api[controller] is just a placeholder
@@ -15,13 +18,11 @@ namespace DatingApp.API.Controllers
     {
         // We use _ so we don't need to put this.
         private readonly DataContext _context;
-
+        //We use this constructor to use the dependency injection.
         public ValuesController(DataContext context)
         {
             // this.context
             _context = context;
-
-
         }
         // GET api/values
         [HttpGet]

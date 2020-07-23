@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API
 {
+    // Let us access to the setting (appsetting.json)
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -25,6 +26,8 @@ namespace DatingApp.API
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
+        // Dependencie injection container
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
